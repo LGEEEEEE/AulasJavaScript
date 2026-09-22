@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM: Página Interativa com JavaScript</title>
+    <style>
+        /* Estilos base (CSS para deixar "bonitinho") */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #d0d0d0;
+        }
+
+        input[type="text"], select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .dynamic-text p {
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        .dynamic-lists ul, .dynamic-lists ol {
+            margin-top: 15px;
+            background-color: #f9f9f9;
+            padding: 15px 30px;
+            border-radius: 5px;
+        }
+
+        /* Botão de reset com cor de destaque */
+        .btn-reset {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .btn-reset:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>DOM: Página Interativa com JavaScript</h1>
+
+        <!-- 1. Contador de Cliques -->
+        <div class="section">
+            <button id="btn-incrementar">Incrementar</button>
+            <button id="btn-decrementar">Decrementar</button>
+            <p id="contador-display">0</p>
+        </div>
+
+        <!-- 2 e 3. Entrada de texto dinâmico e Contador de Caracteres -->
+        <div class="section">
+            <input type="text" id="input-texto" placeholder="Digite algo...">
+            <p><span id="contador-caracteres">0</span> caracteres</p>
+        </div>
+
+        <!-- Onde os parágrafos serão inseridos -->
+        <div class="section dynamic-text" id="container-paragrafos"></div>
+
+        <!-- 4. Adicionar novo item (Listas) -->
+        <div class="section">
+            <label for="tipo-lista">Escolha o tipo de lista: </label>
+            <select id="tipo-lista">
+                <option value="ul">Lista Não Ordenada</option>
+                <option value="ol">Lista Ordenada</option>
+            </select>
+            <button id="btn-add-lista">Adicionar Lista</button>
+        </div>
+
+        <!-- Onde as listas serão inseridas -->
+        <div class="section dynamic-lists" id="container-listas"></div>
+
+        <!-- 5. Botão de Reset -->
+        <div class="section">
+            <button id="btn-resetar" class="btn-reset">Resetar Tudo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
